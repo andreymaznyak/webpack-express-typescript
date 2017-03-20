@@ -6,11 +6,15 @@ import * as root from 'app-root-path';
 import * as cookieParser from 'cookie-parser';
 import * as routes from './server/routes';
 
+import * as PG from './server/datastores/posgresql'
+
+console.log(PG);
+
 const app = express();
 
 // view engine setup
 app.set('views', `${root}/server/views/`);
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
